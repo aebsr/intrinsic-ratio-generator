@@ -2,8 +2,8 @@
 title: Intrinsic Ratio Generator
 description: > # Intrinsic ratio generator and calculator for building
   responsive blocks. Commonly used for HTML5 videos and complex layouts.
-baseurl: "/instrinsic-ratio-generator/" # the subpath of your site, e.g. /blog/
-url: "http://aeb.sr" # the base hostname & protocol for your site
+baseurl: "/instrinsic-ratio-generator"
+url: "http://aeb.sr"
 
 # Build settings
 markdown: kramdown
