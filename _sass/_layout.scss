@@ -152,12 +152,6 @@ pre {
         &:hover {
             background-color: transparentize(#1689B6, 0.2);
         }
-
-        &.foo {
-            right: 50%;
-            -webkit-transform: translateX(50%);
-            transform: translateX(50%);
-        }
     }
 }
 
