@@ -1,0 +1,129 @@
+---
+layout: default
+---
+
+<script type="text/jsx">
+  /** @jsx React.DOM */
+
+  var
+    Application,
+    Css,
+    hash = window.location.hash.replace(/^#/, '').split(/:|@/);
+
+  Css = React.createClass({
+    propTypes: {
+      width: React.PropTypes.number.isRequired
+    },
+    getInitialState: function() {
+      return {
+        demo: false
+      }
+    },
+    renderCssCode: function() {
+      return [
+        '.foo {',
+        '  width: ' + this.props.width + '%;',
+        '  height: 0;',
+        '  padding-bottom: ' + this.props.paddingBottom + '%;',
+        '}'
+      ].join('\n');
+    },
+    toggleDemo: function() {
+      var newState = {};
+      newState['demo'] = (this.state.demo == true ? false : true);
+      this.setState(newState);
+    },
+    render: function() {
+      var demo = (this.state.demo == true ? 'foo' : '');
+      return  (
+        <div>
+          <pre><code>{this.renderCssCode()}</code><a className={demo} onClick={this.toggleDemo}>toggle demo</a></pre>
+          <style media="screen">{this.renderCssCode()}</style>
+        </div>
+      );
+    }
+  });
+
+  Application = React.createClass({
+    getInitialState: function() {
+      return {
+        x: (parseFloat(hash[0]) ? parseFloat(hash[0]) : 16),
+        y: (parseFloat(hash[1]) ? parseFloat(hash[1]) : 9),
+        width: (parseFloat(hash[2]) ? parseFloat(hash[2]) : 100)
+      };
+    },
+    handleChange: function(event) {
+      var el = event.target,
+          name = el.name,
+          value = el.value;
+      if (!isNaN(value) && value != null) {
+        var newState = {};
+        newState[name] = value;
+        this.setState(newState);
+      }
+    },
+    handleClick: function(event) {
+      event.target.select()
+    },
+    componentDidUpdate: function() {
+      window.location.hash = this.state.x + ':' + this.state.y + '@' + this.state.width
+    },
+    render: function () {
+      var x = this.state.x || 16,
+          y = this.state.y || 9,
+          width = this.state.width || 100,
+          paddingBottom = width / (x / y);
+      return (
+        <main>
+          <header>
+            <h1>Intrinsic Ratio Generator</h1>
+            <ul>
+              <li><a href="http://alistapart.com/article/creating-intrinsic-ratios-for-video/">ALA</a></li>
+              <li><a href="http://github.com/aebsr/instrinsic-ratio-generator/blob/master/intrinsic-ration.scss">SASS</a></li>
+              <li><a href="http://github.com/aebsr/instrinsic-ratio-generator/blob/master/intrinsic-ration.less">LESS</a></li>
+            </ul>
+          </header>
+          <form>
+            <span>
+              <input
+                name="x"
+                type="text"
+                pattern="[0-9]*"
+                value={this.state.x}
+                placeholder="16"
+                onChange={this.handleChange}
+                onClick={this.handleClick}
+                required />
+            </span>
+            <span>
+              <input
+                name="y"
+                type="text"
+                pattern="[0-9]*"
+                value={this.state.y}
+                placeholder="9"
+                onChange={this.handleChange}
+                onClick={this.handleClick}
+                required />
+            </span>
+            <span>
+              <input
+                name="width"
+                type="text"
+                pattern="[0-9]*"
+                value={this.state.width}
+                placeholder="100"
+                onChange={this.handleChange}
+                onClick={this.handleClick}
+                required />
+            </span>
+          </form>
+          <Css paddingBottom={paddingBottom} width={width} />
+          <footer>made by <a href="https://twitter.com/aebsr">aebsr</a> &mdash; <abbr title="shout out">s/o</abbr> to <a href="https://twitter.com/matthewwithanm">matthewwithanm</a>, <a href="https://twitter.com/lettertwo">lettertwo</a> &amp; <a href="http://hzdg.com/">hz</a>.</footer>
+        </main>
+      )
+    }
+  });
+
+  React.renderComponent(<Application />, document.body);
+</script>

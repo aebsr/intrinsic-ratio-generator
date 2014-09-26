@@ -1,0 +1,5 @@
+@mixin ir($ratio, $width: 100) {
+	width: $width + '%';
+	height: 0;
+	padding-bottom: $width / $ratio + '%';
+}
