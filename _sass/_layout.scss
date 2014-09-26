@@ -93,6 +93,7 @@ form {
             -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
             color: #cdcdcd;
+            z-index: 0;
         }
 
         &:nth-child(1):before { content: 'w' }
@@ -107,6 +108,8 @@ input {
     width: 100%;
     background: transparent;
     color: #4d4f53;
+    position: relative;
+    z-index: 1;
 
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
