@@ -2,7 +2,22 @@
 layout: default
 ---
 
-<main></main>
+<main>
+  <header>
+    <h1>Intrinsic Ratio Generator</h1>
+    <ul>
+      <li><a href="https://raw.githubusercontent.com/aebsr/intrinsic-ratio-generator/gh-pages/intrinsic-ratio.scss">SASS</a></li>
+      <li><a href="https://raw.githubusercontent.com/aebsr/intrinsic-ratio-generator/gh-pages/intrinsic-ratio.less">LESS</a></li>
+    </ul>
+  </header>
+  <p>
+    In 2009, Thierry Koblentz wrote about <a href="http://alistapart.com/article/creating-intrinsic-ratios-for-video">Intrinsic Ratios</a>, specifically in regards to videos. By now they&rsquo;re used everywhere, or should be, thanks to RWD. I found myself whipping out a calculator once too often, so I made a simple LESS mixin to do the <a href="https://coderwall.com/p/jn8xlw">math for me</a> in 2013.
+  </p>
+  <p>
+    As a learning experiment I took that mixin logic and built a calculator to generate the CSS for an intrinsic ratio using <a href="http://facebook.github.io/react/">ReactJS</a>. As a result, sorry but this app requires JavaScript to run. I&rsquo;ve included LESS and SASS mixins above for your leisure.
+  </p>
+  <footer>made by <a href="https://twitter.com/aebsr">aebsr</a> &mdash; <abbr title="shout out">s/o</abbr> to <a href="https://twitter.com/matthewwithanm">matthewwithanm</a>, <a href="https://twitter.com/lettertwo">lettertwo</a> &amp; <a href="http://hzdg.com/">hz</a>. <br /><br /><a href="https://github.com/aebsr/intrinsic-ratio-generator">View source code on GitHub</a></footer>
+</main>
 
 <script type="text/jsx">
   /** @jsx React.DOM */
@@ -120,7 +135,13 @@ layout: default
             </span>
           </form>
           <Css paddingBottom={paddingBottom} width={width} />
-          <footer>made by <a href="https://twitter.com/aebsr">aebsr</a> &mdash; <abbr title="shout out">s/o</abbr> to <a href="https://twitter.com/matthewwithanm">matthewwithanm</a>, <a href="https://twitter.com/lettertwo">lettertwo</a> &amp; <a href="http://hzdg.com/">hz</a>.</footer>
+          <p>
+            In 2009, Thierry Koblentz wrote about <a href="http://alistapart.com/article/creating-intrinsic-ratios-for-video">Intrinsic Ratios</a>, specifically in regards to videos. By now they&rsquo;re used everywhere, or should be, thanks to RWD. I found myself whipping out a calculator once too often, so I made a simple LESS mixin to do the <a href="https://coderwall.com/p/jn8xlw">math for me</a> in 2013.
+          </p>
+          <p>
+            As a learning experiment I took that mixin logic and built a calculator to generate the CSS for an intrinsic ratio using <a href="http://facebook.github.io/react/">ReactJS</a>. As a result, sorry but this app requires JavaScript to run. I&rsquo;ve included LESS and SASS mixins above for your leisure.
+          </p>
+          <footer>made by <a href="https://twitter.com/aebsr">aebsr</a> &mdash; <abbr title="shout out">s/o</abbr> to <a href="https://twitter.com/matthewwithanm">matthewwithanm</a>, <a href="https://twitter.com/lettertwo">lettertwo</a> &amp; <a href="http://hzdg.com/">hz</a>. <br /><br /><a href="https://github.com/aebsr/intrinsic-ratio-generator">View source code on GitHub</a></footer>
         </div>
       )
     }

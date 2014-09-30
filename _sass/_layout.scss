@@ -29,6 +29,8 @@ body {
     color: #222;
     display: table-cell;
     vertical-align: middle;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 main {
@@ -162,6 +164,12 @@ footer {
     text-align: center;
 }
 
+p {
+    font-size: 0.8em;
+    line-height: 1.5;
+    margin: 1.2em 0;
+}
+
 a {
     color: #E41B68;
     transition: color 0.3s ease-in-out;
@@ -174,8 +182,6 @@ a {
 @media (max-width: 640px) {
     body {
         vertical-align: top;
-        padding-top: 1em;
-        padding-botto: 1em;
     }
 
     code {
