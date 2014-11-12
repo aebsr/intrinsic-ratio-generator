@@ -1,5 +1,6 @@
+/* Usage: @include ir(16/9, 100); */
 @mixin ir($ratio, $width: 100) {
-	width: $width + '%';
+	width: $width * 1%;
 	height: 0;
-	padding-bottom: $width / $ratio + '%';
+	padding-bottom: ($width / $ratio) * 1%;
 }
