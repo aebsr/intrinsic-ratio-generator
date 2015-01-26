@@ -8,4 +8,4 @@ In an effort to learn something new I decided to build a calculator with raw Jav
 
 Though the common use case for responsive containers are videos, I'll try and share some unique non video related examples of intrinsic ratios in the wild.
 
-- [About HZ](www.hzdg.com/about/) Alternating landscape and horizontal grid of responsive boxes.
+- [About HZ](http://www.hzdg.com/about/) Alternating landscape and horizontal grid of responsive boxes.
